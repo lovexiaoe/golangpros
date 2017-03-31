@@ -1,0 +1,7 @@
+下面简述，socket,websocket,RESTful,RPC，webservice等远程通信方式的区别。
+1，socket：一切皆socket,不同系统之间通过ip+端口区分进行通信，可建立长连接和短连接。
+2，websocket：H5客户端和服务器端的连接。
+3，RESTful：基于HTTP标准方法的客户端，服务器端的通信，可以访问资源。以url来定位一个资源，通信方式可以使用json，xml等多种方式。很灵活。
+4，RPC：远程方法调用，远程方法像调用本地方法一样，一般是同一种语言之间的调用，跨语言的调用框架如thrift等，一般是CS程序的调用。
+5，webservice：通常发布在web服务器上。
+	参数-->XML-->封装成soap-->传输给server-->server解封soap-->处理得到结果-->封装成soap-->传输给client-->client解析为xml-->转化为结果。
