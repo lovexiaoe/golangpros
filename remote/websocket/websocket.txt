@@ -1,0 +1,5 @@
+WebSocket是HTML5的重要特性，它实现了基于浏览器的远程socket，它使浏览器和服务器可以进行全双工通信，
+许多浏览器（Firefox、Google Chrome和Safari）都已对此做了支持。
+
+具体可参考github上，https://github.com/lovexiaoe/build-web-application-with-golang/blob/master/zh/08.2.md
+或者https://github.com/astaxie/build-web-application-with-golang/blob/master/zh/08.2.md

@@ -14,11 +14,11 @@ func main() {
 	//channel进行进程间的通信，解决了上述需要睡眠的问题。
 	c := make(chan bool)
 	go func() {
-		fmt.Println("Go Go Go!")
+		fmt.Println("Go Go Go1!")
 		//将true存入c
 		c <- true
 	}()
-	//取出c,当main执行到这里时，会等到goroutine将值放入c中后再运行，所以会打印出Go,GO,GO
+	//取出c,当main执行到这里时，会等到goroutine将值放入c中后再运行，所以会打印出Go,GO,GO1
 	<-c
 	//---
 }
