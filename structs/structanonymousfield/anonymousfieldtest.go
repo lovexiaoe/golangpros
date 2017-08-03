@@ -23,6 +23,7 @@ func main() {
 
 	// 我们访问相应的字段
 	fmt.Println("His name is ", mark.name)
+	fmt.Println("mark.Human.name is ", mark.Human.name)
 	fmt.Println("His age is ", mark.age)
 	fmt.Println("His weight is ", mark.weight)
 	fmt.Println("His speciality is ", mark.speciality)

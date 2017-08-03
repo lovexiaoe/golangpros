@@ -11,6 +11,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 )
 
 func main() {
@@ -35,4 +36,22 @@ func main() {
 	}
 
 	delete(rating, "C") // 删除key为C的元素
+
+	//map的迭代操作
+	for _, v := range numbers {
+		fmt.Println(v) //这里打印的map是无序的，每次打印的结果可能不一样，如果要得到有序的结果，则需要对map进行排序。
+	}
+
+	//map的排序，对map进行排序，需要创建一个新的slice，将map的可以放到slice中，然后对slice进行排序，再迭代取出map的值。
+	maplen := len(numbers)
+	s := make([]string, maplen)
+	i := 0
+	for k, _ := range numbers {
+		s[i] = k
+		i++
+	}
+	sort.Strings(s)
+	for i = 0; i < maplen; i++ {
+		fmt.Println(numbers[s[i]])
+	}
 }

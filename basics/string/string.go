@@ -5,6 +5,7 @@ import (
 )
 
 //go中的字符串都是采用UTF-8编码，字符串是用一对双引号（""）或者反引号（``）括起来的。
+//不赋值时，默认为空字符串。
 func main() {
 	var emptyString string = "asdfdf"
 	fmt.Printf(emptyString)

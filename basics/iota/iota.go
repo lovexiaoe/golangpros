@@ -8,8 +8,8 @@ import (
 )
 
 const (
-	x = iota // x == 0
-	y = iota // y == 1
+	x = 'A'  // x == 65
+	y = iota // y == 1 只要出现iota，按行递增，并不是出现iota时，才从0开始。所以这里y=1
 	z = iota // z == 2
 	w        // 常量声明省略值时，默认和之前一个值的字面相同。这里隐式地说w = iota，因此w == 3。其实上面y和z可同样不用"= iota"
 )

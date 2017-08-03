@@ -7,7 +7,7 @@ import (
 	"fmt"
 )
 
-//有缓冲，读先执行，可以打印出Go Go Go。
+//有缓冲，读先执行时，要等待缓存有写入，才执行读，所以可以打印出Go Go Go。
 //func main() {
 //	c := make(chan bool, 1)
 //	go func() {
@@ -18,7 +18,7 @@ import (
 //	<-c
 //}
 
-//有缓冲，写先执行，写完main执行完成，所以打印不出Go Go Go。
+//有缓冲，写先执行，写不会等待读操作，所以写完时，main执行完成，所以打印不出Go Go Go。
 //func main() {
 //	c := make(chan bool, 1)
 //	go func() {
