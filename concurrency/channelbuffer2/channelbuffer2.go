@@ -9,7 +9,7 @@ import (
 )
 
 //func main() {
-//	//显式定义了处理器的执行核数，
+//	//显式定义了逻辑处理器的个数，
 //	//NumCPU取得当前机器的cpu核数。
 //	runtime.GOMAXPROCS(runtime.NumCPU())
 //	c := make(chan bool)
@@ -34,7 +34,7 @@ import (
 
 //方法一，缓存channel
 //func main() {
-//	//显式定义了处理器的执行核数，
+//	//显式定义了逻辑处理器的个数，
 //	//NumCPU取得当前机器的cpu核数。
 //	runtime.GOMAXPROCS(runtime.NumCPU())
 //	c := make(chan bool, 10)
@@ -59,7 +59,7 @@ import (
 
 //方法2,WaitGroup方式
 func main() {
-	//显式定义了处理器的执行核数，
+	//显式定义了逻辑处理器的个数，
 	//NumCPU取得当前机器的cpu核数。
 	runtime.GOMAXPROCS(runtime.NumCPU())
 	wg := sync.WaitGroup{}

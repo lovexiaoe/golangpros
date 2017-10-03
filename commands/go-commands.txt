@@ -1,3 +1,0 @@
-go doc 查看一个函数或者包，如go doc fmt 查看fmt包，一般很长会打印不完。
-       查看一个函数时要把go和doc连起来写，如 godoc fmt Println。
-	   如果不能打开官网，可以在本地查看，默认的端口是6060，使用localhost:6060打开
