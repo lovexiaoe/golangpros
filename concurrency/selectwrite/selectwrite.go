@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	c := make(chan int)
+	c := make(chan int, 2)
 	go func() {
 		for v := range c {
 			fmt.Println(v)

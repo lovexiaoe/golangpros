@@ -1,0 +1,2 @@
+mutex is named after the concept of mutual exclusion.互斥锁创建了一个保证在一个时间段内
+只有一个goroutine运行的代码块。

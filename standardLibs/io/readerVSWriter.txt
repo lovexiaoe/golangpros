@@ -1,0 +1,25 @@
+reader接口的定义如下：
+type Reader interface {
+	Read(p []byte) (n int, err error)
+}
+
+Reader的规则如下：
+1，Reader从p读取len(p)个字节。返回读取的长度(o<=n<=len(p))和遇到的错误。如果可用的数据小于
+len(p),Read会读取这些可用的数据并返回，而不是等待足够可用的数据。
+2，关于EOF的读取情况，当最后一个byte读取完成后，接下来会有两种处理方法，Read既可以返回正确的计数，
+将EOF返回给error。又可以返回正确的计数并nil返回给error，但是第二种情况，下一次读取必须返回
+0byte，并将EOF返回给error。
+3，调用者应该先处理读取的bytes，而不是先处理EOF或者其他错误的error。
+4，read当读取0个byte时，error一定不是nil，没有byte返回时，一定会返回一个错误。
+
+
+
+writer接口如下：
+type Writer interface {
+	Write(p []byte) (n int, err error)
+}
+
+接口文档说明：
+write向目标流写入len(p)个字节。返回写入的长度(0<=n<=len(p))和先碰到的error,如果写入的长度
+小于len(p),那么err不能为nil。write不能改变p，临时也不行。
+

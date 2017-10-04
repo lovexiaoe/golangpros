@@ -1,0 +1,3 @@
+buffered channel 可以保存一个或者多个值，不会要求goroutine同时存储和接收数据。接收的goroutine
+在buffered channel为空的时候回阻塞，而发送的goroutine在channel满的时候回阻塞。和unbuffered
+channel最大的区别就是不要求同步进行数据传递。

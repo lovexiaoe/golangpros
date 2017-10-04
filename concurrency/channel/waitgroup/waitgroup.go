@@ -8,30 +8,6 @@ import (
 	"sync"
 )
 
-//func main() {
-//	//显式定义了逻辑处理器的个数，
-//	//NumCPU取得当前机器的cpu核数。
-//	runtime.GOMAXPROCS(runtime.NumCPU())
-//	c := make(chan bool)
-//	for i := 0; i < 10; i++ {
-//		go Go(c, i)
-//	}
-//	<-c
-//}
-
-//func Go(c chan bool, index int) {
-//	a := 1
-//	for i := 0; i < 10000000; i++ {
-//		a += i
-//	}
-//	fmt.Println(index, a)
-//	//其实这里的index==9并不能断定最后一个goroutine的执行完毕，在多核心cpu下，不一会先执行1-10的那个goroutine
-//	//如果先执行index==9的goroutine,则main会取得channel后退出。
-//	if index == 9 {
-//		c <- true
-//	}
-//}
-
 //方法一，缓存channel
 //func main() {
 //	//显式定义了逻辑处理器的个数，

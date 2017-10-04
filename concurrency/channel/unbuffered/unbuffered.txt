@@ -1,0 +1,5 @@
+unbuffered channel 是一种send和receive同步进行的channel，只有当send和receive的
+goroutine都准备好后，渠道就会交换一次数据。也就是当一个goroutine写入的同时，另一个读取的
+goroutine会读取。在一个channel内完成整个数据交换的过程。可以用接力赛（relay race）中的接
+棒来比喻channel，两个运动员都准备好了，然后传递接力棒，这一传递接力棒的过程就是一次channel传
+递数据的过程。

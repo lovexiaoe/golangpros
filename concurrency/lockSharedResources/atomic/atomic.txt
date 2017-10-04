@@ -1,0 +1,2 @@
+Atomic functions provide low-level locking mechanisms for synchronizing access to
+integers and pointers.

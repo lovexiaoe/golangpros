@@ -1,0 +1,17 @@
+在go中为了保证共享资源安全，和避免race conditions,你不需要使用atomic或者mutex，因为这两者会让
+程序变得复杂，并且容易出错。你只需要使用channel在多个goroutine之间通信，channel作为一种导管，
+提供了一种同步交换的安全机制。
+
+内建的，自定义的，结构或者引用类型的value或者pointer都可以使用channel来共享。
+
+channel的定义，channel分为buffered和unbuffered，下面是两种channel的定义。
+
+// Unbuffered channel of integers.
+	unbuffered := make(chan int)
+// Buffered channel of strings.
+	buffered := make(chan string, 10)
+
+channel的写入和读取都使用 "<-" 符号。
+channel在声明时可以使用赋值符号表示方向，默认是双向的，如下：
+timeout <-chan time.Time 定义一个单向接收的channel
+timeout chan<- time.Time 定义一个单向发送的channel

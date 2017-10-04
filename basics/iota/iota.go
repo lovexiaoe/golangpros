@@ -28,6 +28,17 @@ const (
 	g       = iota             //g = 4
 )
 
+//下面是log包中定义日期格式的定义，第一行表示1<<0。
+const (
+	Ldate         = 1 << iota
+	Ltime                         //隐式地赋值为1<<1
+	Lmicroseconds                 //隐式地赋值为1<<2
+	LstdFlags     = Ldate | Ltime //这是赋值会打断iota。
+	Llongfile                     //打断后会默认赋上一行的值，Ldate | Ltime
+	LShortfile                    //打断后会默认赋上一行的值，Ldate | Ltime
+)
+
 func main() {
 	fmt.Println(a, b, c, d, e, f, g, h, i, j, x, y, z, w, v)
+	fmt.Println(Ldate, Ltime, Lmicroseconds, LstdFlags, Llongfile, LShortfile)
 }
