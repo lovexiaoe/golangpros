@@ -17,4 +17,7 @@ func main() {
 	for v := range c {
 		fmt.Println(v)
 	}
+	//	for range c {
+	//		<-c
+	//	}
 }

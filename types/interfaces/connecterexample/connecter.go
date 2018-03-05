@@ -42,9 +42,9 @@ func main() {
 */
 func interfaceAssign() {
 
-	var b Connecter
-	//	b = PhoneConnecter{"valueTestConnecter"} //当实现接口的方法为T 和 *T
-	b = &PhoneConnecter{"pointerTestConnecter"} //当实现接口的方法为*T
+	var b Connecter //声明一个接口类型的对象。
+	//	b = PhoneConnecter{"valueTestConnecter"} //只可以调用(t T)方法
+	b = &PhoneConnecter{"pointerTestConnecter"} //可以调用(t T) 和 (t *T)方法
 	b.Connect()
 }
 
@@ -53,8 +53,9 @@ func (pc PhoneConnecter) Name() string {
 }
 
 /**
-	根据go官方文档，值类型的对象T,只能声明value receiver的方法作为方法集的一部分，
-	而指针类型的对象*T既可以声明value receiver的方法也可以声明pointer receiver的方法作为方法集的一部分。
+	根据go官方文档，接口类型的对象调用方法时，和对象直接调用方法的规则不同。
+	值类型的interface对象T,只能声明value receiver的方法作为方法集的一部分，
+	而指针类型的interface对象*T既可以声明value receiver的方法也可以声明pointer receiver的方法作为方法集的一部分。
 	Values 		Methods Receivers
 	-----------------------------------------------
 	T 			(t T)
