@@ -12,7 +12,7 @@ const ballotX = "\u2717"
 
 // 继续使用http.Get作为例子。
 func TestDownload(t *testing.T) {
-	//下面是一张不同参数和记过的表。
+	//下面是一张不同参数和结果的表。
 	var urls = []struct {
 		url        string
 		statusCode int

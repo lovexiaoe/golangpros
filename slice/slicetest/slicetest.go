@@ -12,7 +12,7 @@ func main() {
 	//声明一个slice和array类似，只是少了长度。
 	//var fslice []int
 	//初始化一个slice和array也类似。
-	slice := []byte{'a', 'b', 'c', 'd'}
+	//slice := []byte{'a', 'b', 'c', 'd'}
 
 	//slice可以从一个数组或一个已经存在的slice中再次声明。slice通过array[i:j]来获取，其中i是数组的开始位置，j是结束位置，但不包含array[j]，它的长度是j-i。
 	// 声明一个含有10个元素元素类型为byte的数组
@@ -28,12 +28,12 @@ func main() {
 	c = ar[:3] //等价于 ar[0:3] c包含元素: a,b,c
 	d = ar[5:] // 等价于ar[5:10] ar包含元素: f,g,h,i,j
 	//e = ar[:]  // 等价于ar[0:10] 这样ar包含了全部的元素
-	e := ar[3:4:6] //3个参数的切片，定义了e的cap为6-3=3。第3个参数超过底层参数就会报错。如ar[3:4:11]。
+	//	e := ar[3:4:6] //3个参数的切片，定义了e的cap为6-3=3。第3个参数超过底层参数就会报错。如ar[3:4:11]。
 	//上面做的好处是在append超过6时，就会重新分配新的底层数组，而不用等到超过10的时候。
 
 	//slice使用make初始化
 	s1 := make([]int, 3, 10) //数组长度为3，cap容量为10，当slice分配的元素超过cap时，程序会重新分配内存（消耗一定的资源）。
-	s0 := make([]int, 5)     //当声明指定一个长度时，cap和len都为这个长度。
+	//	s0 := make([]int, 5)     //当声明指定一个长度时，cap和len都为这个长度。
 	fmt.Println(s1)
 
 	//slice有几个有用的内置函数。
@@ -48,7 +48,7 @@ func main() {
 	//追加后，c为a,b,c,m。追加没有超过c的cap，所以不会重新分配空间。
 	//ar为a,b,c,m,e,f,g,h,i,j。ar变化了，但是其cap不会变化。
 	fmt.Println(cap(c))
-	fmt.Printf("%v,%p\n", string(c), c) //c的地址没有改变
+	fmt.Printf("%v,%p,%s\n", string(c), c, c) //c的地址没有改变
 
 	//原始数组ar保持不变，cap也不会变化。
 	fmt.Printf("%v,%p\n", string(d), d)
